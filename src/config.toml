@@ -1,0 +1,12 @@
+[config]
+population_size = 30 # 种群规模
+ndim = 2 # 问题维度
+bounds = [-10, 10] # 问题边界
+max_iters = 30 # 迭代次数
+
+[save]
+root = "data" # 数据保存根目录
+history = "history.csv" # 保存迭代记录文件
+result = "result.json"  # 保存迭代结果
+figure = "result.svg" # 保存算法迭代结果图
+

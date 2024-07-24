@@ -1,0 +1,23 @@
+[project]
+name = "optimization"
+version = "0.1.0"
+description = "启发式优化算法的python实现"
+authors = [
+    { name = "achieve_dream", email = "wulei7217@gmail.com" }
+]
+dependencies = [
+    "matplotlib>=3.9.1",
+    "numpy>=2.0.1",
+    "polars>=1.2.1",
+    "pydantic>=2.8.2",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
