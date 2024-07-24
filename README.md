@@ -6,6 +6,20 @@ author: wulei7217@gmail.com
 
 # 如何使用
 
+## 方式1: rye (推荐)
+
+[rye安装教程](https://github.com/astral-sh/rye#installation)
+
+```shell
+git clone https://github.com/achieve-dream1221/optimization
+cd optimization
+rye sync
+```
+
+使用pycharm打开项目, 并设置当前目录的.venv为python虚拟环境, enjoy it!
+
+## 方式2: 传统方式
+
 ```shell
 # 安装依赖
 pip install -r requirements.lock
