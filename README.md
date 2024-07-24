@@ -8,7 +8,7 @@ author: wulei7217@gmail.com
 
 ```shell
 # 安装依赖
-pip install -r requirements.txt
+pip install -r requirements.lock
 # 运行测试脚本
 ## 混沌映射测试
 python src/bench_chaos_mapping.py
