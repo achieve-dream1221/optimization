@@ -12,13 +12,13 @@ import numpy as np
 
 # noinspection DuplicatedCode
 def ssa(
-        fitness_func: Callable[[np.ndarray, Any], np.ndarray],
-        population_size: int,
-        ndim: int,
-        bounds: tuple[float, float],
-        max_iters: int,
-        seed: int = None,
-        **kwargs,
+    fitness_func: Callable[[np.ndarray, Any], np.ndarray],
+    population_size: int,
+    ndim: int,
+    bounds: tuple[float, float],
+    max_iters: int,
+    seed: int = None,
+    **kwargs,
 ):
     """
     樽海鞘群算法
@@ -52,8 +52,8 @@ def ssa(
             *bounds, size=(population_size // 2, ndim)
         )
         # followers, P(i) = (P(i - 1) + P(i)) / 2， 后一半种群
-        P[population_size // 2:] = 0.5 * (
-                P[population_size // 2 - 1: -1] + P[population_size // 2:]
+        P[population_size // 2 :] = 0.5 * (
+            P[population_size // 2 - 1 : -1] + P[population_size // 2 :]
         )
         # 超出范围的解重置为边界值
         P.clip(*bounds, out=P)

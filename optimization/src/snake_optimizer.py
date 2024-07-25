@@ -11,13 +11,13 @@ import numpy as np
 
 # noinspection DuplicatedCode
 def so(
-        fitness_func: Callable[[np.ndarray, Any], np.ndarray],
-        population_size: int,
-        ndim: int,
-        bounds: tuple[float, float],
-        max_iters: int = 100,
-        seed: int = None,
-        **kwargs,
+    fitness_func: Callable[[np.ndarray, Any], np.ndarray],
+    population_size: int,
+    ndim: int,
+    bounds: tuple[float, float],
+    max_iters: int = 100,
+    seed: int = None,
+    **kwargs,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
     :param fitness_func: 适应度函数
@@ -91,21 +91,21 @@ def so(
                 # 战斗模式
                 fight = np.exp(-MF[male_best_idx] / (FF + eps))
                 FP[:] = P[:fs] + c3 * fight * rng.random((fs, ndim)) * (
-                        food_quality * FP[female_best_idx] - P[:fs]
+                    food_quality * FP[female_best_idx] - P[:fs]
                 )
                 fight = np.exp(-FF[female_best_idx] / (MF + eps))
                 MP[:] = P[fs:] + c3 * fight * rng.random((ms, ndim)) * (
-                        food_quality * MP[male_best_idx] - P[fs:]
+                    food_quality * MP[male_best_idx] - P[fs:]
                 )
             else:
                 # 交配模式
                 mate = np.exp(-MF / (FF + eps))
                 FP[:] = P[:fs] + c3 * mate * rng.random((fs, ndim)) * (
-                        food_quality * MP - P[:fs]
+                    food_quality * MP - P[:fs]
                 )
                 mate = np.exp(-FF / (MF + eps))
                 MP[:] = P[:fs] + c3 * mate * rng.random((ms, ndim)) * (
-                        food_quality * FP - P[:fs]
+                    food_quality * FP - P[:fs]
                 )
             # 产蛋
             if rng.random() <= 0.5:
